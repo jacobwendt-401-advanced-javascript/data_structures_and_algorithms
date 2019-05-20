@@ -7,4 +7,4 @@ let reverse = function(arr) {
   return newArray;
 };
 
-console.log(reverse([1,2,3,4,5,6,7,8]));
+console.log(reverse([1,2,3,4,5,6,7,8,9]));
