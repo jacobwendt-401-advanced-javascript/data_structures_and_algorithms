@@ -25,7 +25,7 @@ class LinkedList {
     this.size = 0;
   }
   //Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
-  add(value) {
+  push(value) {
     var node = new Node(value);
     var current;
 
@@ -42,38 +42,53 @@ class LinkedList {
     }
     this.size++;
   }
+
+  insert(value) {
+    if(this.head === null){
+      this.head = new Node(value);
+    } else {
+      let oldHead = this.head;
+      this.head = new Node(value);
+      this.head.next = oldHead;
+    }
+
+  }
   //Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
   includes(value) {
-    var count = 0;
+    var count = 0; // eslint-disable-line
     var current = this.head;
     while (current !== null) {
-      if (current.value === value)
+      if (current.value === value) {
         return true;
+      }
       count++;
       current = current.next;
     }
     return false;
   }
   //Define a method called print which takes in no arguments and returns a collection all of the current Node values in the Linked List.
-  toArray() {
-    var myLinkedListArray = [];
+  toString() {
+    var myLinkedListString = '';
     var current = this.head;
     while (current) {
-      myLinkedListArray.push(current.value);
+      myLinkedListString += current.value + ',';
       current = current.next;
     }
-    return myLinkedListArray;
+    return myLinkedListString;
   }
 }
 
-var myLinkedList = new LinkedList();
+module.exports = LinkedList;
 
-for(let i = 0; i < 10; i++){
-  myLinkedList.add(i);
-}
+// var myLinkedList = new LinkedList();
+
+// for(let i = 0; i < 10; i++){
+//   myLinkedList.add(i);
+// }
 
 
-console.log(myLinkedList.toArray());
-console.log(myLinkedList.includes(5));
-console.log(myLinkedList.includes(25));
+// console.log(myLinkedList.toArray());
+// console.log(myLinkedList.includes(5));
+// console.log(myLinkedList.includes(25));
+
 
