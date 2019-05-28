@@ -54,7 +54,7 @@ describe('Linked List', () => {
   test('Can properly return a collection of all the values that exist in the linked list', () => {
     let emptyList = new LinkedList();
     emptyList.push(1);
-    emptyList.push(2);w
+    emptyList.push(2);
     emptyList.push(3);
     emptyList.push(4);
     emptyList.insertBefore(3,1);
