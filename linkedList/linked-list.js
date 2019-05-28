@@ -51,8 +51,42 @@ class LinkedList {
       this.head = new Node(value);
       this.head.next = oldHead;
     }
-
   }
+
+  insertAfter(value, newValue) {
+    let current = this.head;
+    if(this.includes(value) === true){
+      while(current !== null) {
+        if(current.value === value) {
+          let oldVal = current.next;
+          current.next = new Node(newValue);
+          current.next.next = oldVal;
+          break;
+        }
+        current = current.next;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  insertBefore(value, newValue) {
+    let current = this.head;
+    if(this.includes(value) === true){
+      while(current !== null) {
+        if(current.next.value === value) {
+          let oldVal = current.next;
+          current.next = new Node(newValue);
+          current.next.next = oldVal;
+          break;
+        }
+        current = current.next;
+      }
+    } else {
+      return null;
+    }
+  }
+
   //Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
   includes(value) {
     var count = 0; // eslint-disable-line
@@ -92,3 +126,13 @@ module.exports = LinkedList;
 // console.log(myLinkedList.includes(25));
 
 
+let testLL = new LinkedList();
+
+testLL.push(1);
+testLL.push(2);
+testLL.push(3);
+testLL.push(4);
+testLL.push(5);
+
+console.log(testLL.toString());
+console.log(this.head);

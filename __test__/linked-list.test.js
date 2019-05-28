@@ -50,5 +50,43 @@ describe('Linked List', () => {
     emptyList.push(2);
     expect(emptyList.toString()).toBe('1,2,');
   });
-});
 
+  test('Can properly return a collection of all the values that exist in the linked list', () => {
+    let emptyList = new LinkedList();
+    emptyList.push(1);
+    emptyList.push(2);w
+    emptyList.push(3);
+    emptyList.push(4);
+    emptyList.insertBefore(3,1);
+    expect(emptyList.toString()).toBe('1,2,1,3,4,');
+  });
+
+  test('Can properly return a collection of all the values that exist in the linked list', () => {
+    let emptyList = new LinkedList();
+    emptyList.push(1);
+    emptyList.push(2);
+    emptyList.push(3);
+    emptyList.push(4);
+    emptyList.insertAfter(3,1);
+    expect(emptyList.toString()).toBe('1,2,3,1,4,');
+  });
+
+  test('Can properly return a collection of all the values that exist in the linked list', () => {
+    let emptyList = new LinkedList();
+    emptyList.push(1);
+    emptyList.push(2);
+    emptyList.push(3);
+    emptyList.push(4);
+    expect(emptyList.insertBefore(5,1)).toBe(null);
+  });
+
+  test('Can properly return a collection of all the values that exist in the linked list', () => {
+    let emptyList = new LinkedList();
+    emptyList.push(1);
+    emptyList.push(2);
+    emptyList.push(3);
+    emptyList.push(4);
+    expect(emptyList.insertAfter(5,1)).toBe(null);
+  });
+
+});
