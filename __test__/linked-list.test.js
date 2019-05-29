@@ -11,7 +11,7 @@ describe('Linked List', () => {
   test('Can properly insert into the linked list', () => {
     let emptyList = new LinkedList();
     emptyList.push(1);
-    expect(emptyList.size).toBe(1);
+    expect(emptyList.length).toBe(1);
   });
 
   test('The head property will properly point to the first node in the linked list', () => {
@@ -89,4 +89,18 @@ describe('Linked List', () => {
     expect(emptyList.insertAfter(5,1)).toBe(null);
   });
 
+  test('Can properly return the value of the node k from the end', () => {
+    let emptyList = new LinkedList();
+    emptyList.push(1);
+    emptyList.push(2);
+    emptyList.push(3);
+    emptyList.push(4);
+    emptyList.push(5);
+    emptyList.push(6);
+    emptyList.push(7);
+    emptyList.push(8);
+    emptyList.push(9);
+    emptyList.push(10);
+    expect(emptyList.kFromEnd(2)).toBe(8);
+  });
 });
