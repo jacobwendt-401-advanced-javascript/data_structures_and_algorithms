@@ -62,8 +62,6 @@ module.exports = class Tree {
       this.preorder(node.right);
       return preOrderArr;
     }
-
-
   }
 
   postorder(node) {
@@ -76,10 +74,26 @@ module.exports = class Tree {
     }
   }
 
-  findMaxNode(node) { 
-    if(node.right === null) 
-        return node; 
-    else
-        return this.findMaxNode(node.right); 
+  findMaxNode() { 
+    if(this.root === null){
+        return null; 
+    }
+
+    var max = 0;
+
+    traverse(this.root);
+    return max;
+
+  function traverse(node){
+    if (node.value > max){
+      max= node.value;
+    }
+    if (node.left){
+      traverse(node.left);
     } 
+      traverse(node.right);
+    }
+  }
+}
+
 };
