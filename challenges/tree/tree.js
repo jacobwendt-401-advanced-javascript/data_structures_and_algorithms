@@ -75,4 +75,11 @@ module.exports = class Tree {
       return postOrderArr;
     }
   }
+
+  findMaxNode(node) { 
+    if(node.right === null) 
+        return node; 
+    else
+        return this.findMaxNode(node.right); 
+    } 
 };

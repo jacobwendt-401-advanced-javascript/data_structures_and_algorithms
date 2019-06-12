@@ -33,5 +33,8 @@ describe('methods of a tree', () => {
     expect(seed.postorder(seed.root)).toEqual([0,1234,3,2,1]);
   });
 
+  it('Return max node value', () => {
+    expect(seed.findMaxNode(seed.root).value).toEqual(1234);
+  });
 
 });
