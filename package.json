@@ -1,0 +1,25 @@
+{
+  "name": "data_structures_and_algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "eslint": "eslint .",
+    "feslint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobwendt-401-advanced-javascript/data_structures_and_algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobwendt-401-advanced-javascript/data_structures_and_algorithms/issues"
+  },
+  "homepage": "https://github.com/jacobwendt-401-advanced-javascript/data_structures_and_algorithms#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
+  }
+}
